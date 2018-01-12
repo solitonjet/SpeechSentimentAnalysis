@@ -5,7 +5,6 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.os.Handler;
-import android.util.Log;
 
 import java.util.List;
 
@@ -112,7 +111,6 @@ public class AnimationSequencer<T> {
     private AnimatorListenerAdapter mAnimAdapter = new AnimatorListenerAdapter() {
         @Override
         public void onAnimationEnd(Animator animation) {
-            Log.d("TEST", "onAnimationEnd()");
             inclementSequenceId();
             mAnimSequenceHandler.post(mAnimSequencer);
         }
