@@ -19,14 +19,14 @@ import static com.example.solit.speechsentimentanalysis.AnimationSequencer.ANIM_
 import static com.example.solit.speechsentimentanalysis.AnimationSequencer.ANIM_ROTATION;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private final AnimationSequencer.AnimationSequencerCallback mAnimCallback
                             = new AnimationSequencer.AnimationSequencerCallback() {
         @Override
         public void onAnimationEnd() {
             super.onAnimationEnd();
-
-            Log.d("TEST", "Animation Ended");
+            Log.d(TAG, "Animation Ended");
         }
     };
 
@@ -61,6 +61,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
