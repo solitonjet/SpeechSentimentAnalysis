@@ -1,19 +1,12 @@
 package com.example.solit.speechsentimentanalysis;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.Button;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static com.example.solit.speechsentimentanalysis.AnimationSequencer.ANIM_ALPHA;
 import static com.example.solit.speechsentimentanalysis.AnimationSequencer.ANIM_ROTATION;
