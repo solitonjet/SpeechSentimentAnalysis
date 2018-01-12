@@ -46,7 +46,7 @@ public class AnimationSequencer<T> {
      */
     private final AnimationSequencerCallback mCallback;
     private ObjectAnimator mObjectAnimator;
-    private List<AnimationSequenceParams> mSequenseList;
+    private List<AnimationSequenceParams> mSequenceList;
 
     private int iSeqId;
     private T mView;
@@ -85,11 +85,11 @@ public class AnimationSequencer<T> {
     };
 
     private void setSequenseList(List<AnimationSequenceParams> sequenseList) {
-        mSequenseList = sequenseList;
+        mSequenceList = sequenseList;
     }
 
     private List<AnimationSequenceParams> getSequenseList() {
-        return mSequenseList;
+        return mSequenceList;
     }
 
     private int getSequenceId() {
