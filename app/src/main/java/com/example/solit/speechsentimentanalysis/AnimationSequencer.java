@@ -15,10 +15,8 @@ import java.util.List;
 
 public class AnimationSequencer<T> {
 
-    private final AnimationSequencerCallback mCallback;
     public static abstract class AnimationSequencerCallback {
         public void onAnimationEnd() {}
-
     }
 
     public class AnimationSequenceParams {
@@ -32,12 +30,9 @@ public class AnimationSequencer<T> {
     public static final int ANIM_SCALE      = 102;
     public static final int ANIM_TRANSLATE  = 103;
 
-    private ObjectAnimator mObjectAnimator;
-
-    private T mView;
-    public AnimationSequencer(T _view, AnimationSequencerCallback _callback) {
-        mView = _view;
-        mCallback = _callback;
+    public AnimationSequencer(T view, AnimationSequencerCallback callback) {
+        mView = view;
+        mCallback = callback;
         mObjectAnimator = new ObjectAnimator();
     }
 
@@ -47,6 +42,19 @@ public class AnimationSequencer<T> {
         mAnimSequenceHandler.post(mAnimSequencer);
     }
 
+    /**
+     * Private definitions
+     */
+    private final AnimationSequencerCallback mCallback;
+    private ObjectAnimator mObjectAnimator;
+    private List<AnimationSequenceParams> mSequenseList;
+
+    private int iSeqId;
+    private T mView;
+
+    /**
+     * Animation Sequence Handler
+     */
     private Handler mAnimSequenceHandler = new Handler();
     private Runnable mAnimSequencer = new Runnable() {
         @Override
@@ -77,18 +85,18 @@ public class AnimationSequencer<T> {
         }
     };
 
-    List<AnimationSequenceParams> mSequenseList;
     private void setSequenseList(List<AnimationSequenceParams> sequenseList) {
         mSequenseList = sequenseList;
     }
+
     private List<AnimationSequenceParams> getSequenseList() {
         return mSequenseList;
     }
 
-    private int iSeqId;
     private int getSequenceId() {
         return iSeqId;
     }
+
     private void inclementSequenceId() {
         iSeqId++;
     }
