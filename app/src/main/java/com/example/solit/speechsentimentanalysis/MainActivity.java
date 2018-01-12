@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import static com.example.solit.speechsentimentanalysis.AnimationSequencer.ANIM_ALPHA;
 import static com.example.solit.speechsentimentanalysis.AnimationSequencer.ANIM_ROTATION;
+import static com.example.solit.speechsentimentanalysis.AnimationSequencer.ANIM_SCALE;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -41,13 +42,31 @@ public class MainActivity extends AppCompatActivity {
                 params = sequencer.new AnimationSequenceParams();
                 params.type = ANIM_ALPHA;
                 params.values = new float[]{0f, 1f};
-                params.time = 1000;
+                params.time = 500;
                 paramlist.add(params);
 
                 params = sequencer.new AnimationSequenceParams();
                 params.type = ANIM_ROTATION;
-                params.values = new float[]{0f, 360f};
-                params.time = 3000;
+                params.values = new float[]{0f, -10f};
+                params.time = 100;
+                paramlist.add(params);
+
+                params = sequencer.new AnimationSequenceParams();
+                params.type = ANIM_ROTATION;
+                params.values = new float[]{-10f, 10f};
+                params.time = 200;
+                paramlist.add(params);
+
+                params = sequencer.new AnimationSequenceParams();
+                params.type = ANIM_ROTATION;
+                params.values = new float[]{10f, 0f};
+                params.time = 100;
+                paramlist.add(params);
+
+                params = sequencer.new AnimationSequenceParams();
+                params.type = ANIM_SCALE;
+                params.values = new float[]{1f, 2f, 1f, 2f};
+                params.time = 500;
                 paramlist.add(params);
 
                 sequencer.doAnimate(paramlist);
